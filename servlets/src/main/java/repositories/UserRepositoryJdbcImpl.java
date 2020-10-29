@@ -1,5 +1,6 @@
 package repositories;
 
+import com.sun.org.apache.xalan.internal.xsltc.compiler.Template;
 import models.User;
 
 import javax.sql.DataSource;
@@ -12,6 +13,7 @@ import java.util.List;
 
 public class UserRepositoryJdbcImpl implements UserRepository {
 
+    private static final String SQL_INSERT_IMAGE = "update user set profilePhoto = ? where id = ?;";
     private DataSource dataSource;
 
     public UserRepositoryJdbcImpl(DataSource dataSource) {
@@ -78,6 +80,22 @@ public class UserRepositoryJdbcImpl implements UserRepository {
                     //ignore
                 }
             }
+        }
+    }
+
+    @Override
+    public void saveImage(String filename, Long id) {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = dataSource.getConnection();
+            statement = connection.prepareStatement(SQL_INSERT_IMAGE);
+            statement.setString(1, filename);
+            statement.setLong(2, id);
+            statement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
     }
 

@@ -20,7 +20,7 @@ public class ContextListener implements ServletContextListener {
         SimpleDataSourceConfig simpleConfig = new SimpleDataSourceConfig();
 
         simpleConfig.setUrl("jdbc:mysql://localhost:3306/mashina_ru?serverTimezone=UTC");
-        simpleConfig.setDriver("com.mysql.jdbc.Driver");
+        simpleConfig.setDriver("com.mysql.cj.jdbc.Driver");
         simpleConfig.setUsername("root");
         simpleConfig.setPassword("Кщще");
 

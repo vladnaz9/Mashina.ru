@@ -40,7 +40,7 @@ public class RegisterServlet extends HttpServlet {
                     .build();
             userService.addUser(user);
             request.getSession().setAttribute("user", user);
-            response.sendRedirect("/main");
+            response.sendRedirect("/login");
         }
     }
 

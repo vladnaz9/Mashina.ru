@@ -14,4 +14,6 @@ public interface UserService {
     User getUser(String email);
 
     User getUserById(Long id);
+
+    void setImage(String filename, Long id);
 }

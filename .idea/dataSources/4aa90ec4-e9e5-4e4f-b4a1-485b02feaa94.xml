@@ -951,35 +951,39 @@ BACKUP_ADMIN,BINLOG_ADMIN,CONNECTION_ADMIN,ENCRYPTION_KEY_ADMIN,GROUP_REPLICATIO
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;user&apos;</DefaultExpression>
     </column>
-    <index id="294" parent="287" name="username_UNIQUE">
+    <column id="294" parent="287" name="profilePhoto">
+      <Position>7</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <index id="295" parent="287" name="username_UNIQUE">
       <ColNames>userName</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="295" parent="287" name="user_id_UNIQUE">
+    <index id="296" parent="287" name="user_id_UNIQUE">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="296" parent="287" name="dop_inf_UNIQUE">
+    <index id="297" parent="287" name="dop_inf_UNIQUE">
       <ColNames>dop_inf</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="297" parent="287" name="PRIMARY">
+    <key id="298" parent="287" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="298" parent="287" name="username_UNIQUE">
+    <key id="299" parent="287" name="username_UNIQUE">
       <ColNames>userName</ColNames>
       <UnderlyingIndexName>username_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="299" parent="287" name="user_id_UNIQUE">
+    <key id="300" parent="287" name="user_id_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>user_id_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="300" parent="287" name="dop_inf_UNIQUE">
+    <key id="301" parent="287" name="dop_inf_UNIQUE">
       <ColNames>dop_inf</ColNames>
       <UnderlyingIndexName>dop_inf_UNIQUE</UnderlyingIndexName>
     </key>

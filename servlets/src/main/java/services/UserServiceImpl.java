@@ -36,4 +36,11 @@ public class UserServiceImpl implements UserService {
     public User getUserById(Long id) {
         return userRepository.findById(id);
     }
+
+    @Override
+    public void setImage(String filename, Long id) {
+         userRepository.saveImage(filename, id);
+    }
+
+
 }
