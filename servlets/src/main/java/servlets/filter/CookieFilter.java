@@ -1,14 +1,9 @@
 package servlets.filter;
 
-package filters;
-
-import dao.UserDaoImpl;
 import models.User;
-import repositories.UserRepositoryJdbcImpl;
+
 import services.UserService;
-import services.UserServiceImpl;
-import services.UsersService;
-import services.UsersServiceImpl;
+
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -16,7 +11,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.SQLException;
+
 
 @WebFilter(filterName = "cookieFilter", urlPatterns = {
         "/main", "/profile", "/basket",  "/catalog", "/editProfile",
@@ -28,7 +23,7 @@ public class CookieFilter implements Filter {
     }
 
     @Override
-    public void init(FilterConfig fConfig) throws ServletException {
+    public void init(FilterConfig fConfig)  {
 
     }
 
@@ -55,11 +50,8 @@ public class CookieFilter implements Filter {
 
         if (flag != null) {
             UserService userService = (UserService) req.getServletContext().getAttribute("userService");
-            try {
-                user = usersService.findByEmail(flag);
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
+            User user;
+            user = userService.getUser(flag);
             if (user != null) {
                 session.setAttribute("loginedUser", user.getEmail());
             }

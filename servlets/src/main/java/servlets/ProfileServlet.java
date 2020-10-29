@@ -25,8 +25,8 @@ public class ProfileServlet extends HttpServlet {
         user = (User) req.getSession().getAttribute("user");
         req.setAttribute("user", user);
         UserService userService = (UserService) req.getServletContext().getAttribute("userService");
-        
-        if (email != null && !email.equals("")) {
+        String email = user.getEmail();
+        if (userService.getUser(email).getEmail().equals(email)) {
             RequestDispatcher dispatcher = req.getRequestDispatcher("views/profile.jsp");
             dispatcher.forward(req, resp);
         } else {
