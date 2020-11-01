@@ -7,5 +7,4 @@ public interface UserRepository  extends CrudRepository<User> {
 
     void saveImage(String filename, Long id);
 
-
 }

@@ -16,4 +16,6 @@ public interface UserService {
     User getUserById(Long id);
 
     void setImage(String filename, Long id);
+
+    public void update(User item) ;
 }

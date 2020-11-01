@@ -3,7 +3,6 @@ package servlets.controller;
 import models.User;
 import org.apache.commons.io.IOUtils;
 import services.UserService;
-import services.UserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -26,7 +25,7 @@ public class DirUploadServlet extends HttpServlet {
                 file.getSubmittedFileName();
         UserService userService = (UserService) request.getServletContext().getAttribute("userService");
         userService.setImage(filename, user.getId());
-        user.setProfilePhoto(filename);
+        user.setImage(filename);
         IOUtils.copyLarge(
                 file.getInputStream(),
                 new FileOutputStream(uploadDir +

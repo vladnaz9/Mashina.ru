@@ -1,6 +1,5 @@
 package repositories;
 
-import com.sun.org.apache.xalan.internal.xsltc.compiler.Template;
 import models.User;
 
 import javax.sql.DataSource;
@@ -13,12 +12,13 @@ import java.util.List;
 
 public class UserRepositoryJdbcImpl implements UserRepository {
 
-    private static final String SQL_INSERT_IMAGE = "update user set profilePhoto = ? where id = ?;";
+    private static final String SQL_INSERT_IMAGE = "update user set image = ? where id = ?;";
     private DataSource dataSource;
+
 
     public UserRepositoryJdbcImpl(DataSource dataSource) {
         this.dataSource = dataSource;
-    }
+        }
 
     //language=SQL
     private final String SQL_SELECT_ALL = "SELECT * FROM user";
@@ -38,6 +38,8 @@ public class UserRepositoryJdbcImpl implements UserRepository {
             .password(row.getString("password"))
             .dop_inf(row.getString("dop_inf"))
             .build();
+
+
 
     @Override
     public User findByEmail(String email) {

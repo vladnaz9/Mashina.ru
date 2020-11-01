@@ -951,7 +951,7 @@ BACKUP_ADMIN,BINLOG_ADMIN,CONNECTION_ADMIN,ENCRYPTION_KEY_ADMIN,GROUP_REPLICATIO
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;user&apos;</DefaultExpression>
     </column>
-    <column id="294" parent="287" name="profilePhoto">
+    <column id="294" parent="287" name="image">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>

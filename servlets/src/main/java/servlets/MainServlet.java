@@ -11,6 +11,6 @@ import java.io.IOException;
 public class MainServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.getRequestDispatcher("views/main.jsp").forward(request, response);
+        request.getRequestDispatcher("/main.jsp").forward(request, response);
     }
 }

@@ -1,53 +1,123 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <title>profile</title>
-    <style>
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            max-width: 300px;
-            margin: auto;
-            text-align: center;
-        }
+    <meta charset="UTF-8">
+    <title>Профиль</title>
 
-        .title {
-            color: grey;
-            font-size: 18px;
-        }
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
 
-        button {
-            border: none;
-            outline: 0;
-            display: inline-block;
-            padding: 8px;
-            color: white;
-            background-color: #000;
-            text-align: center;
-            cursor: pointer;
-            width: 100%;
-            font-size: 18px;
-        }
 
-        a {
-            text-decoration: none;
-            font-size: 22px;
-            color: black;
-        }
+    <link rel="stylesheet" href="https://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script src="https://bootstraptema.ru/plugins/jquery/jquery-1.11.3.min.js"></script>
+    <script src="https://bootstraptema.ru/plugins/2015/b-v3-3-6/bootstrap.min.js"></script>
 
-        button:hover, a:hover {
-            opacity: 0.7;
-        }
-    </style>
 </head>
 <body>
-<!-- Add icon library -->
+
+<br><br><br>
+
+<style>
+    #main {
+        background-color: #f2f2f2;
+        padding: 20px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        border-radius: 4px;
+        border-bottom: 4px solid #ddd;
+    }
+
+    #real-estates-detail #author img {
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        -ms-border-radius: 100%;
+        -o-border-radius: 100%;
+        border-radius: 100%;
+        border: 5px solid #ecf0f1;
+        margin-bottom: 10px;
+    }
+
+    #real-estates-detail .sosmed-author i.fa {
+        width: 30px;
+        height: 30px;
+        border: 2px solid #bdc3c7;
+        color: #bdc3c7;
+        padding-top: 6px;
+        margin-top: 10px;
+    }
+
+    .panel-default .panel-heading {
+        background-color: #fff;
+    }
+
+    #real-estates-detail .slides li img {
+        height: 450px;
+    }
+</style>
+
+<div class="container mb-5">
+    <div id="main">
 
 
-<div class="card">
-    <img src="img.jpg" alt="my photo" style="width:100%">
-    <h1>John Doe</h1>
-    <p class="title">CEO & Founder, Example</p>
-    <p>Harvard University</p>
-    <p><button>Contact</button></p>
-</div>
+        <div class="row" id="real-estates-detail">
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <header class="panel-title">
+                            <div class="text-center">
+                                <strong>Пользователь сайта</strong>
+                            </div>
+                        </header>
+                    </div>
+                    <div class="panel-body">
+                        <div class="text-center" id="author">
+                            <img src="../../images/products/rose.jpg" alt="avatar">
+                            <h3>${name}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-8 col-xs-12">
+                <div class="panel">
+                    <div>
+                        <div id="myTabContent">
+
+                            <form action="">
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label" for="exampleFormControlFile1">
+                                        Avatar</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" class="form-control-file " id="exampleFormControlFile1"
+                                               value="Выбрать файл">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputPassword" class="col-sm-2 col-form-label">Пароль</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="inputPassword">
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-outline-primary shadow p-2 rounded">Сохранить
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.main -->
+</div><!-- /.container -->
+
+
 </body>
+
 </html>

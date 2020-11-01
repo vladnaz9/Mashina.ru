@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.*;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
@@ -35,9 +34,9 @@ public class LoginServlet extends HttpServlet {
             req.getSession().setAttribute("user", user);
             if (remember) {
                 Cookie emailCookie = new Cookie("email", email);
-                emailCookie.setMaxAge(60 * 60 * 24 * 365);
+                emailCookie.setMaxAge(60 * 60 * 24 * 30);
                 Cookie hashCookie = new Cookie("password", HashPassword.getHash(password));
-                hashCookie.setMaxAge(60 * 60 * 24 * 365);
+                hashCookie.setMaxAge(60 * 60 * 24 * 30);
                 resp.addCookie(emailCookie);
                 resp.addCookie(hashCookie);
             }

@@ -42,5 +42,8 @@ public class UserServiceImpl implements UserService {
          userRepository.saveImage(filename, id);
     }
 
-
+    @Override
+    public void update(User item) {
+        userRepository.save(item);
+    }
 }

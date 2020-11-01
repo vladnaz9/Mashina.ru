@@ -13,16 +13,16 @@ import java.io.IOException;
 
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
 
-        UserService userService = (UserService) request.getServletContext().getAttribute("userService");
+        UserService userService = (UserService) req.getServletContext().getAttribute("userService");
 
-        String userName = request.getParameter("userName");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        String password_again = request.getParameter("password_again");
-        String dop_inf = request.getParameter("dop_inf");
+        String userName = req.getParameter("userName");
+        String email = req.getParameter("email");
+        String password = req.getParameter("password");
+        String password_again = req.getParameter("password_again");
+        String dop_inf = req.getParameter("dop_inf");
         System.out.println(userName + " " + email + " " + dop_inf + " " + password + " " + password_again);
 
 
@@ -30,7 +30,7 @@ public class RegisterServlet extends HttpServlet {
         password = HashPassword.getHash(password);
 
         if (userService.userIsExist(email)) {
-            response.sendRedirect("/login");
+            resp.sendRedirect("/login");
         } else {
             User user = User.builder()
                     .userName(userName)
@@ -39,8 +39,8 @@ public class RegisterServlet extends HttpServlet {
                     .password(password)
                     .build();
             userService.addUser(user);
-            request.getSession().setAttribute("user", user);
-            response.sendRedirect("/login");
+            req.getSession().setAttribute("user", user);
+            resp.sendRedirect("/login");
         }
     }
 

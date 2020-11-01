@@ -14,11 +14,8 @@ public class ExitServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        DeleteCookies.delete(req, resp,"email", "password");
 
         req.getSession().setAttribute("user", null);
-        req.getSession().setAttribute("order", null);
-
         resp.sendRedirect("/main");
     }
 }

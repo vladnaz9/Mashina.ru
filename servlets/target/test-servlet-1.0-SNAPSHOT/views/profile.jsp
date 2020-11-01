@@ -10,6 +10,14 @@
 
 <html>
 <head>
+
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
+
+    <script type="text/javascript">
+        VK.init({apiId: API_ID, onlyWidgets: true});
+    </script>
+
+
     <title>profile</title>
     <style>
         .card {
@@ -53,13 +61,13 @@
 <div class="card">
     <%--    тут будет фото--%>
     <img src="" alt="my photo" style="width:100%">
+
+
     <h1>${user.getUserName()} </h1>
-
-
     <p class="title">${user.getEmail()}</p>
     <p>${user.getDop_inf()}</p>
-    <%--    <p><button>Contact</button></p>--%>
-    <form method="post" action="${pageContext.request.contextPath}/img" enctype="multipart/form-data">
+
+    <form method="get" action="${pageContext.request.contextPath}/img" enctype="multipart/form-data">
         <input type="file" name="filename">
         <button type="submit">изменить аватар</button>
     </form>
@@ -71,5 +79,19 @@
         </li>
     </ul>
 </form>
+
+<script type="text/javascript">
+    VK.init({
+        apiId: ВАШ_API_ID,
+        onlyWidgets: true
+    });
+</script>
+
+
+<div id="vk_comments"></div>
+<script type="text/javascript">
+    VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
+</script>
+
 </body>
 </html>
